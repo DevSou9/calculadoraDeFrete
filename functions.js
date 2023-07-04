@@ -1,7 +1,7 @@
 const axios = require('axios');
 const xml2js = require('xml2js');
 
-//git function
+//git function ********
     function calcularFrete(cidade, uf, produto){
 
         console.log(`\n Olá, boas vindas à nossa Loja.\n\n Já recebemos as informações e iremos mandar o produto ${produto} para ${cidade}\n\n`)
