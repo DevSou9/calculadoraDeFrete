@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Exemplo de Formulário
+  body
+    h2 Calcular CEP
+    form(action="/endereco", method="GET")
+      input(type="text" name="cep")
+      input(type="submit" value="Enviar" onclick="atualizarURL(event)")
+
+    script.
+      function atualizarURL(event) {
+        event.preventDefault();
+        const form = event.target.form;
+        const cep = form.querySelector('input[name="cep"]').value;
+        form.action += `/${cep}`;
+        form.submit();
+      }
+    if endereco
+      h2 Dados do Endereço
+      p CEP: #{endereco.cep}
+      p Logradouro: #{endereco.logradouro}
+      p Bairro: #{endereco.bairro}
+      p Cidade: #{endereco.localidade}
+      p Estado: #{endereco.uf}
+
+    if erro
+      p(class="error") #{erro}

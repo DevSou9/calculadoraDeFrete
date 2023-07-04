@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Exemplo de Formulário
+  body
+    h2 Calcular CEP
+    form(action="/frete", method="GET")
+      input(id="cepOrigemInput" type="text" name="cepOrigem")
+      input(id="cepDestinoInput" type="text" name="cepDestino")
+      input(type="submit" value="Ver Valor do Frete" onclick="atualizarURL(event)")
+
+    script.
+      function atualizarURL(event) {
+        event.preventDefault();
+        const cepOrigem = document.getElementById('cepOrigemInput').value;
+        const cepDestino = document.getElementById('cepDestinoInput').value;
+        console.log(`Variáveis com valor obtido do Input: ${cepOrigem}, ${cepDestino}`)
+        const url = `/frete/${cepOrigem}/${cepDestino}`;
+        window.location.href = url;
+      }
+      // ao chamar event.preventDefault() dentro da função atualizarURL(event), você impede o envio padrão do formulário, que geralmente resultaria na atualização da página ou no redirecionamento para uma nova URL. Isso permite que você manipule os dados do formulário e execute ações personalizadas antes de realizar qualquer redirecionamento ou envio de dados para o servidor.
+
+      //a linha window.location.href = url; não redireciona para uma URL totalmente nova, mas sim atualiza a URL atual adicionando os parâmetros especificados.

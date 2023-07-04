@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Exemplo de Formulário
+  body
+    h2 Calcular CEP
+    form(action="/frete", method="GET")
+      input(type="text" name="cepOrigem")
+      input(type="text" name="cepDestino")
+      input(type="submit" value="Ver Valor do Frete" onclick="atualizarURL(event)")
+
+    script.
+      function atualizarURL(event) {
+        event.preventDefault();        
+        const form = event.target.form;
+        const cepOrigem = form.querySelector('input[name="cepOrigem"]').value;
+        const cepDestino = form.querySelector('input[name="cepDestino"]').value;
+
+        form.action = "/frete";
+        form.action += `/${cepOrigem}/${cepDestino}`;
+        form.submit();
+      }
+
+    if endereco
+      h2 Dados do Endereço       
+      p Código: #{endereco.codigo}
+      p Valor: #{endereco.valor}
+      p Prazo de Entrega: #{endereco.prazoEntrega}

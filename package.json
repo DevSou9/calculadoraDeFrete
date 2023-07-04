@@ -1,0 +1,18 @@
+{
+  "name": "calcfrete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --ext js nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dev9",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "pug": "^3.0.2",
+    "xml2js": "^0.6.0"
+  }
+}
